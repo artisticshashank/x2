@@ -1,14 +1,10 @@
-# P6 – Layout and template inheritance
+# Experiment 6 – Layout Inheritance
 
-## Run
-- Windows: double-click `run.bat`.
-- Ubuntu: `chmod +x run.sh && ./run.sh`.
+Run `./run.sh` on Ubuntu or `run.bat` on Windows. The launcher creates a local virtual environment and installs Django.
 
-The first run needs internet to install Django. Keep this folder intact.
+Open these URLs:
+- http://127.0.0.1:8000/main/
+- http://127.0.0.1:8000/about/
+- http://127.0.0.1:8000/contact/
 
-## Demonstration
-1. Open Home.
-2. Navigate to About and Contact.
-3. Show that all pages inherit the same header, navigation and footer from `layout.html`.
-
-Open: http://127.0.0.1:8000/
+The app uses the manual's `main`, `about`, and `contact` views and the `portfolio/layout.html` template path.
