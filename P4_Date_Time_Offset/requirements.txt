@@ -1,2 +1,1 @@
 Django==5.2.18
-python-dateutil==2.9.0.post0
