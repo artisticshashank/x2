@@ -12,7 +12,15 @@ if "%CHOICE%"=="" (
   echo P7 - Student-course registration
   set /p CHOICE=Select experiment (P2-P7): 
 )
-if /I "%CHOICE%"=="P2" (echo P2 contains environment setup only; no Django source/manage.py exists. See P2_SETUP.md. & exit /b 0)
+if /I "%CHOICE%"=="P2" (
+  if not exist ".venv\Scripts\python.exe" py -m venv .venv
+  call ".venv\Scripts\activate.bat"
+  python -m pip install --disable-pip-version-check -r requirements.txt
+  if errorlevel 1 exit /b 1
+  echo P2 environment setup complete. Virtual environment: .venv
+  echo No P2 Django application source/manage.py is present in the repository.
+  exit /b 0
+)
 if /I "%CHOICE%"=="P3" set "PROJECT_DIR=ps\ p3currentdateandtime\fsd pro3\pro3project"
 if /I "%CHOICE%"=="P4" set "PROJECT_DIR=ps\p4dateandtime4hrsplusand4hrsbeforeoffset\pro4\pro4project"
 if /I "%CHOICE%"=="P5" set "PROJECT_DIR=ps\p5\pro5\pro5project"
