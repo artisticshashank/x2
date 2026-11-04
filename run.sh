@@ -10,7 +10,14 @@ if [ -z "$CHOICE" ]; then
 fi
 CHOICE="$(printf '%s' "$CHOICE" | tr '[:lower:]' '[:upper:]')"
 case "$CHOICE" in
-  P2) echo "P2 contains environment setup only; no Django source/manage.py exists in the current repository."; echo "See P2_SETUP.md."; exit 0 ;;
+  P2)
+    if [ ! -d "$ROOT_DIR/.venv" ]; then python3 -m venv "$ROOT_DIR/.venv"; fi
+    source "$ROOT_DIR/.venv/bin/activate"
+    python -m pip install --disable-pip-version-check -r "$ROOT_DIR/requirements.txt"
+    echo "P2 environment setup complete. Virtual environment: $ROOT_DIR/.venv"
+    echo "No P2 Django application source/manage.py is present in the repository."
+    exit 0
+    ;;
   P3) PROJECT_DIR="ps/ p3currentdateandtime/fsd pro3/pro3project" ;;
   P4) PROJECT_DIR="ps/p4dateandtime4hrsplusand4hrsbeforeoffset/pro4/pro4project" ;;
   P5) PROJECT_DIR="ps/p5/pro5/pro5project" ;;
