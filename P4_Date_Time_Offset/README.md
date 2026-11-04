@@ -1,14 +1,7 @@
-# P4 – Date and time four hours ahead and before
+# Experiment 4 – Date and Time Offsets
 
-## Run
-- Windows: double-click `run.bat`.
-- Ubuntu: `chmod +x run.sh && ./run.sh`.
+Run `./run.sh` on Ubuntu or `run.bat` on Windows. The launcher creates a local virtual environment and installs Django plus the manual's `dateutil` import dependency.
 
-The first run needs internet to install Django. Keep this folder intact.
+Open http://127.0.0.1:8000/datetime-offsets/ to display the current server time, four hours ahead, and four hours before.
 
-## Demonstration
-1. Open the page.
-2. Identify the current server time.
-3. Compare the time four hours ahead and four hours before using `timedelta`.
-
-Open: http://127.0.0.1:8000/
+The view uses the manual's `datetime_offsets` function and calculations. The template is referenced as `offsetapp/datetime_offsets.html` for Django's app-template loader.
