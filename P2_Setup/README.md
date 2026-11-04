@@ -1,17 +1,25 @@
 # P2 – Virtual environment, Django project and app
 
-## Run
+## Run the prepared practical
 - Windows: double-click `run.bat`.
 - Ubuntu: `chmod +x run.sh && ./run.sh`.
 
-The first run needs internet to install Django. Keep this folder intact.
+The launcher creates `.venv`, installs Django, and starts the prepared project. First run requires internet access.
 
-## Demonstration
-1. The folder contains a working Django project and app scaffold.
-2. The launcher creates and activates `.venv`, installs Django, then starts the server.
-3. To demonstrate project/app creation commands in the terminal:
-   - `django-admin startproject labsite .`
-   - `python manage.py startapp setupapp`
-4. The project settings already include `setupapp`.
+## Demonstrate project and app creation commands
+The working example is already present in this folder. To demonstrate the creation commands without overwriting it, open a terminal in this folder and run:
 
-Open: http://127.0.0.1:8000/
+```bash
+mkdir creation_demo
+cd creation_demo
+python -m venv venv
+# Activate: Windows: venv\\Scripts\\activate
+# Activate: Ubuntu: source venv/bin/activate
+pip install Django==5.2.18
+django-admin startproject demo_project .
+python manage.py startapp demo_app
+```
+
+Explain: `venv` isolates Python packages, `startproject` creates the Django project, and `startapp` creates an application.
+
+Prepared example URL: http://127.0.0.1:8000/
