@@ -1,4 +1,7 @@
-from datetime import datetime
 from django.shortcuts import render
-def home(request):
-    return render(request, "datetimeapp/home.html", {"current_datetime": datetime.now()})
+import datetime
+
+def current_datetime(request):
+    now = datetime.datetime.now()
+    context = {'datetime': now}
+    return render(request, 'datetimeapp/current_datetime.html', context)
