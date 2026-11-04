@@ -1,14 +1,7 @@
-# P5 – Unordered fruits and ordered students lists
+# Experiment 5 – Fruits and Selected Students
 
-## Run
-- Windows: double-click `run.bat`.
-- Ubuntu: `chmod +x run.sh && ./run.sh`.
+Run `./run.sh` on Ubuntu or `run.bat` on Windows. The launcher creates a local virtual environment and installs Django.
 
-The first run needs internet to install Django. Keep this folder intact.
+Open http://127.0.0.1:8000/home/ to display the unordered fruit list and ordered student list.
 
-## Demonstration
-1. Open the page.
-2. Point out the unordered fruit list (`ul`).
-3. Point out the ordered selected-students list (`ol`).
-
-Open: http://127.0.0.1:8000/
+The names and list values match the lab manual.
