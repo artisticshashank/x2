@@ -1,0 +1,1 @@
+{% extends "registrationapp/base.html" %}{% block content %}<h2>Students registered for {{ course.name }}</h2>{% for student in students %}<p>{{ student.first_name }} {{ student.last_name }} — {{ student.email }}</p>{% empty %}<p>No students registered for this course.</p>{% endfor %}{% endblock %}
