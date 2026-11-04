@@ -1,6 +1,5 @@
 from django.shortcuts import render
 import datetime
-from dateutil import tz
 
 def datetime_offsets(request):
     now = datetime.datetime.now()
